@@ -371,7 +371,7 @@ h3 { font-size: 1.35rem; margin: 0 0 0.4rem; }
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1.25rem;
+  gap: 1.75rem;
   margin: 1.5rem 0 0;
   padding: 0;
   list-style: none;
@@ -383,12 +383,12 @@ h3 { font-size: 1.35rem; margin: 0 0 0.4rem; }
   text-decoration: none;
   font-weight: 700;
   font-size: 0.98rem;
-  background: #e7f2ee;
+  background: #a2c9be;
   border-radius: 999px;
   padding: 0.55rem 0.9rem;
 }
 
-.subnav a:hover { background: var(--tareyton); }
+.subnav a:hover { background: #8fb5a9; }
 
 .topic { scroll-margin-top: 6.5rem; }
 
