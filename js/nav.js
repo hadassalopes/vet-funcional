@@ -1,4 +1,4 @@
-document.querySelectorAll('a[href^="http"], a[href^="mailto:"]').forEach((link) => {
+document.querySelectorAll('a[href^="http"], a[href^="mailto:"], a[href^="tel:"]').forEach((link) => {
   link.target = "_blank";
   link.rel = "noopener noreferrer";
 });

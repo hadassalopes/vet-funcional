@@ -204,6 +204,35 @@ h3 { font-size: 1.35rem; margin: 0 0 0.4rem; }
   color: var(--viridian);
 }
 
+.subnav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 1.3rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.subnav a {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.98rem;
+  background: #e7f2ee;
+  border-radius: 999px;
+  padding: 0.55rem 0.9rem;
+}
+
+.subnav a:hover { background: var(--tareyton); }
+
+.topic { scroll-margin-top: 6.5rem; }
+
+.clinic h2 { font-size: 1.45rem; }
+
+.clinic address {
+  font-style: normal;
+  margin: 0.35rem 0;
+}
+
 .split {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
