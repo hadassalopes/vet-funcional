@@ -144,6 +144,7 @@ a { color: inherit; }
 }
 
 .btn-wa {
+  position: relative;
   background: var(--viridian);
   color: white;
   width: 2.6rem;
@@ -151,6 +152,36 @@ a { color: inherit; }
   padding: 0;
 }
 .btn-wa:hover { background: #4c756a; }
+
+.btn-wa::after,
+.float-wa::after {
+  content: "Agende sua consulta";
+  position: absolute;
+  z-index: 20;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: white;
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+.btn-wa::after {
+  top: calc(100% + 0.45rem);
+  right: 0;
+}
+
+.btn-wa:hover::after,
+.btn-wa:focus-visible::after,
+.float-wa:hover::after,
+.float-wa:focus-visible::after {
+  opacity: 1;
+}
 
 .btn-agende {
   background: var(--ink);
@@ -532,6 +563,12 @@ details p { margin: 0.7rem 0 0.2rem; }
     text-decoration: none;
     border-radius: 50%;
     box-shadow: var(--shadow);
+  }
+
+  .float-wa::after {
+    right: calc(100% + 0.55rem);
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 
