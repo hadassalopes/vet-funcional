@@ -143,21 +143,32 @@ a { color: inherit; }
   border-color: var(--ink);
 }
 
-.btn-wa {
-  position: relative;
+.float-wa {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 12;
+  width: 3.4rem;
+  height: 3.4rem;
   background: var(--viridian);
   color: white;
-  width: 2.6rem;
-  height: 2.6rem;
-  padding: 0;
+  text-decoration: none;
+  border-radius: 50%;
+  box-shadow: var(--shadow);
 }
-.btn-wa:hover { background: #4c756a; }
 
-.btn-wa::after,
+.float-wa:hover { background: #4c756a; }
+
 .float-wa::after {
   content: "Agende sua consulta";
   position: absolute;
   z-index: 20;
+  right: calc(100% + 0.55rem);
+  top: 50%;
+  transform: translateY(-50%);
   padding: 0.35rem 0.7rem;
   border-radius: 999px;
   background: var(--ink);
@@ -171,17 +182,8 @@ a { color: inherit; }
   transition: opacity 0.15s ease;
 }
 
-.btn-wa::after {
-  top: calc(100% + 0.45rem);
-  right: 0;
-}
-
-.btn-wa:hover::after,
-.btn-wa:focus-visible::after,
 .float-wa:hover::after,
-.float-wa:focus-visible::after {
-  opacity: 1;
-}
+.float-wa:focus-visible::after { opacity: 1; }
 
 .btn-agende {
   background: var(--ink);
@@ -301,7 +303,7 @@ h3 { font-size: 1.35rem; margin: 0 0 0.4rem; }
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  object-position: center 68%;
+  object-position: center 32%;
   border-radius: 1.6rem 1.6rem 4.5rem 1.6rem;
   box-shadow: var(--shadow);
 }
@@ -388,8 +390,8 @@ h3 { font-size: 1.35rem; margin: 0 0 0.4rem; }
   box-shadow: var(--shadow);
 }
 
-.portrait img { aspect-ratio: 4 / 5; object-position: center 30%; }
-.wide img { aspect-ratio: 16 / 9; object-position: center 40%; }
+.portrait img { aspect-ratio: 4 / 5; object-position: center 22%; }
+.wide img { aspect-ratio: 16 / 9; object-position: center 30%; }
 
 ul.clean, ol.clean { margin: 0.4rem 0 0; padding-left: 1.15rem; }
 ul.clean li, ol.clean li { margin: 0.35rem 0; }
@@ -485,9 +487,6 @@ details p { margin: 0.7rem 0 0.2rem; }
 
 .social a:hover { background: rgba(244, 241, 234, 0.12); }
 
-.float-wa {
-  display: none;
-}
 
 .site-header.is-compact .nav-toggle { display: inline-flex; }
 
@@ -512,7 +511,6 @@ details p { margin: 0.7rem 0 0.2rem; }
 .site-header.is-compact .site-nav.is-open { display: flex; }
 
 .site-header.is-compact .site-nav a { padding: 0.6rem 0; white-space: normal; }
-.site-header.is-compact .site-nav a.btn-wa { padding: 0; align-self: flex-start; }
 
 .site-header.is-compact .menu-drop { width: 100%; }
 .site-header.is-compact .menu-drop-btn {
@@ -544,32 +542,8 @@ details p { margin: 0.7rem 0 0.2rem; }
   }
 
   .hero-photo { order: -1; }
-  .hero-photo img, .portrait img { aspect-ratio: 5 / 4; object-position: center 70%; }
 
   .site-footer .wrap { flex-direction: column; align-items: start; }
-
-  .float-wa {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    right: 1rem;
-    bottom: 1rem;
-    z-index: 12;
-    width: 3.4rem;
-    height: 3.4rem;
-    background: var(--viridian);
-    color: white;
-    text-decoration: none;
-    border-radius: 50%;
-    box-shadow: var(--shadow);
-  }
-
-  .float-wa::after {
-    right: calc(100% + 0.55rem);
-    top: 50%;
-    transform: translateY(-50%);
-  }
 }
 
 @media (max-width: 700px) {
