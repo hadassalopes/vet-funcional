@@ -115,8 +115,21 @@ a { color: inherit; }
   border-color: var(--ink);
 }
 
-.btn-wa { background: var(--viridian); color: white; padding: 0.55rem 0.95rem; }
+.btn-wa {
+  background: var(--viridian);
+  color: white;
+  width: 2.6rem;
+  height: 2.6rem;
+  padding: 0;
+}
 .btn-wa:hover { background: #4c756a; }
+
+.icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  display: block;
+  fill: currentColor;
+}
 
 .wrap {
   width: min(var(--max), calc(100% - 12vw));
@@ -325,6 +338,25 @@ details p { margin: 0.7rem 0 0.2rem; }
 .site-footer a { color: white; }
 .site-footer p { margin: 0.2rem 0; color: #d9e4df; }
 
+.social {
+  display: flex;
+  gap: 0.65rem;
+  margin-top: 0.85rem;
+}
+
+.social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  border: 1px solid rgba(244, 241, 234, 0.45);
+  text-decoration: none;
+}
+
+.social a:hover { background: rgba(244, 241, 234, 0.12); }
+
 .float-wa {
   display: none;
 }
@@ -349,6 +381,7 @@ details p { margin: 0.7rem 0 0.2rem; }
   .site-nav.is-open { display: flex; }
 
   .site-nav a { padding: 0.55rem 0; }
+  .site-nav a.btn-wa { padding: 0; align-self: flex-start; }
 
   .hero, .split, .grid-3, .grid-2, .quotes {
     grid-template-columns: 1fr;
@@ -361,16 +394,18 @@ details p { margin: 0.7rem 0 0.2rem; }
 
   .float-wa {
     display: inline-flex;
+    align-items: center;
+    justify-content: center;
     position: fixed;
     right: 1rem;
     bottom: 1rem;
     z-index: 12;
+    width: 3.4rem;
+    height: 3.4rem;
     background: var(--viridian);
     color: white;
     text-decoration: none;
-    font-weight: 700;
-    border-radius: 999px;
-    padding: 0.8rem 1.05rem;
+    border-radius: 50%;
     box-shadow: var(--shadow);
   }
 }
