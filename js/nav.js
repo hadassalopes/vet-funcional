@@ -5,6 +5,7 @@ document.querySelectorAll('a[href^="http"], a[href^="mailto:"], a[href^="tel:"]'
 
 const toggle = document.querySelector(".nav-toggle");
 const nav = document.querySelector(".site-nav");
+const header = document.querySelector(".site-header");
 const drop = document.querySelector(".menu-drop");
 const dropBtn = document.querySelector(".menu-drop-btn");
 
@@ -22,6 +23,41 @@ if (toggle && nav) {
     if (!open) closeDrop();
   });
 }
+
+function rowWidth() {
+  const headerStyle = getComputedStyle(header);
+  const headerGap = parseFloat(headerStyle.columnGap) || parseFloat(headerStyle.gap) || 0;
+  const pad = parseFloat(headerStyle.paddingLeft) + parseFloat(headerStyle.paddingRight);
+  const logo = header.querySelector(".logo").offsetWidth;
+  const agende = header.querySelector(".btn-agende").offsetWidth;
+  const navStyle = getComputedStyle(nav);
+  const navGap = parseFloat(navStyle.columnGap) || parseFloat(navStyle.gap) || 0;
+  const kids = [...nav.children];
+  let links = 0;
+  kids.forEach((el, index) => {
+    links += el.offsetWidth;
+    if (index) links += navGap;
+  });
+  return pad + logo + links + agende + headerGap * 2;
+}
+
+function fitMenu() {
+  if (!header || !nav) return;
+  const wasOpen = nav.classList.contains("is-open");
+  header.classList.remove("is-compact");
+  const compact = rowWidth() > header.clientWidth + 1;
+  header.classList.toggle("is-compact", compact);
+  if (!compact && wasOpen && toggle) {
+    nav.classList.remove("is-open");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Abrir menu");
+    closeDrop();
+  }
+}
+
+fitMenu();
+window.addEventListener("resize", fitMenu);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitMenu);
 
 if (drop && dropBtn) {
   dropBtn.addEventListener("click", (event) => {
