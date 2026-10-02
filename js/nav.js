@@ -61,17 +61,33 @@ fitMenu();
 window.addEventListener("resize", fitMenu);
 if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitMenu);
 
+function setOpen(drop, open) {
+  const btn = drop.querySelector(".menu-drop-btn");
+  drop.classList.toggle("is-open", open);
+  if (btn) btn.setAttribute("aria-expanded", open ? "true" : "false");
+}
+
 drops.forEach((drop) => {
   const btn = drop.querySelector(".menu-drop-btn");
   if (!btn) return;
+
+  drop.addEventListener("mouseenter", () => {
+    if (header.classList.contains("is-compact")) return;
+    closeDrop(drop);
+    setOpen(drop, true);
+  });
+
+  drop.addEventListener("mouseleave", () => {
+    if (header.classList.contains("is-compact")) return;
+    setOpen(drop, false);
+  });
 
   btn.addEventListener("click", (event) => {
     event.preventDefault();
     event.stopPropagation();
     const open = !drop.classList.contains("is-open");
     closeDrop();
-    drop.classList.toggle("is-open", open);
-    btn.setAttribute("aria-expanded", open ? "true" : "false");
+    setOpen(drop, open);
   });
 });
 
