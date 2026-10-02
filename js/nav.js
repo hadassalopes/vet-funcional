@@ -1,3 +1,8 @@
+document.querySelectorAll('a[href^="http"], a[href^="mailto:"]').forEach((link) => {
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+});
+
 const toggle = document.querySelector(".nav-toggle");
 const nav = document.querySelector(".site-nav");
 

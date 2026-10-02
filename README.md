@@ -9,4 +9,4 @@ Páginas:
 - Atendimento em clínicas
 - Consultoria online
 
-O botão de WhatsApp abre conversa com (21) 99466-4460. As páginas estão com `noindex` enquanto o texto estiver em revisão.
+O botão de WhatsApp abre conversa com (21) 99267-5647. O e-mail é equipevetfuncional@gmail.com. Links externos abrem em outra aba. As páginas estão com `noindex` enquanto o texto estiver em revisão.
